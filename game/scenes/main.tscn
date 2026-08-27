@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dlc86xl4g1o1e"]
+
+[ext_resource type="ArrayMesh" uid="uid://0e2idom1k8fd" path="res://3d_models/tea_pot.obj" id="1_o5qli"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
+albedo_color = Color(0.95686275, 0.18039216, 0.3882353, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6l45m"]
+size = Vector2(80, 50)
+orientation = 2
+
+[sub_resource type="Environment" id="Environment_lb78n"]
+volumetric_fog_density = 0.2459
+adjustment_brightness = 0.94
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_6l45m"]
+
+[node name="World" type="Node3D" unique_id=305426670]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=47160760]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 31.896)
+light_color = Color(0.9718326, 0.96505004, 0.9653515, 1)
+light_energy = 11.426
+light_size = 0.703
+light_specular = 6.045
+shadow_enabled = true
+shadow_bias = 5.674
+shadow_normal_bias = 3.376
+shadow_reverse_cull_face = true
+distance_fade_enabled = true
+spot_range = 51.184006
+spot_attenuation = 0.7
+spot_angle = 16.49
+spot_angle_attenuation = 0.6372818
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1922083486]
+transform = Transform3D(0.93726426, 0.045727316, -0.3456078, 0, 0.9913603, 0.13116674, 0.34861976, -0.1229379, 0.9291666, -10.749723, 3.9426517, 35.52978)
+current = true
+fov = 36.4
+
+[node name="TeaPot" type="MeshInstance3D" parent="." unique_id=1863372062]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7112427, 19.05544)
+gi_mode = 2
+mesh = ExtResource("1_o5qli")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wfyh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=161456090]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.6269798)
+mesh = SubResource("PlaneMesh_6l45m")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1107869868]
+environment = SubResource("Environment_lb78n")
+camera_attributes = SubResource("CameraAttributesPractical_6l45m")

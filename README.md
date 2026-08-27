@@ -5,3 +5,7 @@ Twist and turn the shapes, name them and escape the cave of shadows and whispers
 A project made for the 42 course.
 
 
+# Links
+
+- [free asset source](https://ithappystudios.com/free/)
+- [free no email assets source](https://quaternius.com/)
