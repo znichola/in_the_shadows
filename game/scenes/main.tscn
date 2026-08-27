@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dlc86xl4g1o1e"]
 
+[ext_resource type="Script" uid="uid://dywotjo5asyvy" path="res://scripts/main.gd" id="1_0wfyh"]
 [ext_resource type="ArrayMesh" uid="uid://0e2idom1k8fd" path="res://3d_models/tea_pot.obj" id="1_o5qli"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
@@ -16,6 +17,7 @@ adjustment_brightness = 0.94
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_6l45m"]
 
 [node name="World" type="Node3D" unique_id=305426670]
+script = ExtResource("1_0wfyh")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=47160760]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 31.896)
