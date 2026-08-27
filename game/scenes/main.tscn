@@ -53,3 +53,15 @@ mesh = SubResource("PlaneMesh_6l45m")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1107869868]
 environment = SubResource("Environment_lb78n")
 camera_attributes = SubResource("CameraAttributesPractical_6l45m")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=291418552]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1256488600]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 45
+text = "JAJAJ"
