@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://7ctx5y5jbpp1"]
 
+[ext_resource type="Script" uid="uid://xomjvxu14xuc" path="res://scripts/object_def.gd" id="1_0i7bp"]
 [ext_resource type="ArrayMesh" uid="uid://kbfnqvasyw4k" path="res://models/globe_base.obj" id="1_8bvjc"]
 [ext_resource type="ArrayMesh" uid="uid://cgg2vx5wjjoao" path="res://models/globe-earth.obj" id="2_0i7bp"]
 
@@ -7,13 +8,20 @@
 albedo_color = Color(0.031250454, 0.41481033, 0.36711502, 1)
 
 [node name="Node3D" type="Node3D" unique_id=786505704]
+script = ExtResource("1_0i7bp")
+a_x_rot_allowed = false
+b_y_rot_allowed = false
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1424850350]
+[node name="ObjA" type="Node3D" parent="." unique_id=477391784]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ObjA" unique_id=1424850350]
 transform = Transform3D(0.24712873, -0.037765104, 0.0010878104, 0.0024138368, 0.02296613, 0.24893115, -0.037703577, -0.24606168, 0.023066998, 0, 0.7650229, 0)
 mesh = ExtResource("1_8bvjc")
 surface_material_override/0 = SubResource("StandardMaterial3D_muc01")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=579057696]
+[node name="ObjB" type="Node3D" parent="." unique_id=868956756]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ObjB" unique_id=579057696]
 transform = Transform3D(0.24712873, -0.037765104, 0.0010878104, 0.0024138368, 0.02296613, 0.24893115, -0.037703577, -0.24606168, 0.023066998, 0, 0.7650229, 0)
 mesh = ExtResource("2_0i7bp")
 surface_material_override/0 = SubResource("StandardMaterial3D_muc01")

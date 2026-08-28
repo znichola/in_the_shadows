@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://ccofcfxedv8ee"]
 
+[ext_resource type="Script" uid="uid://xomjvxu14xuc" path="res://scripts/object_def.gd" id="1_0p18s"]
 [ext_resource type="ArrayMesh" uid="uid://ddtnmf8bkj8w8" path="res://models/elephant.obj" id="1_akl5o"]
 
 [sub_resource type="Gradient" id="Gradient_gmrpf"]
@@ -20,8 +21,12 @@ metallic = 0.79
 roughness = 0.64
 
 [node name="Node3D" type="Node3D" unique_id=1217104716]
+script = ExtResource("1_0p18s")
+a_x_rot_allowed = false
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2056923616]
+[node name="ObjA" type="Node3D" parent="." unique_id=1995722147]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ObjA" unique_id=2056923616]
 transform = Transform3D(-0.95881975, -0.28401524, 1.24147e-08, 0, -4.371139e-08, -1, 0.28401524, -0.95881975, 4.1911342e-08, 0, 0, 0)
 mesh = ExtResource("1_akl5o")
 surface_material_override/0 = SubResource("StandardMaterial3D_sivy4")
