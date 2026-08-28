@@ -1,53 +1,95 @@
 [gd_scene format=3 uid="uid://dlc86xl4g1o1e"]
 
 [ext_resource type="Script" uid="uid://dywotjo5asyvy" path="res://scripts/main.gd" id="1_0wfyh"]
-[ext_resource type="ArrayMesh" uid="uid://0e2idom1k8fd" path="res://3d_models/tea_pot.obj" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://cyp8q2gcaff5o" path="res://scripts/spot_light_3d.gd" id="2_85g3d"]
+[ext_resource type="Script" uid="uid://bgqfycdxv5pub" path="res://scripts/object_spawner.gd" id="2_o6xl0"]
+[ext_resource type="Script" uid="uid://xomjvxu14xuc" path="res://scripts/object_def.gd" id="3_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://bshfi4micmgb0" path="res://scenes/tea_pot.tscn" id="4_tipki"]
+[ext_resource type="PackedScene" uid="uid://ccofcfxedv8ee" path="res://scenes/elephant.tscn" id="5_tipki"]
+[ext_resource type="PackedScene" uid="uid://7ctx5y5jbpp1" path="res://scenes/globe.tscn" id="6_85g3d"]
+[ext_resource type="Texture2D" uid="uid://cnpclft526m7i" path="res://images/background.png" id="7_85g3d"]
+[ext_resource type="FontFile" uid="uid://dnnwmk46jnqd6" path="res://fonts/Old Cave.otf" id="8_tipki"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
-albedo_color = Color(0.95686275, 0.18039216, 0.3882353, 1)
+[sub_resource type="Resource" id="Resource_tbgi4"]
+script = ExtResource("3_o6xl0")
+scene = ExtResource("4_tipki")
+display_name = "Utah teapot"
+hint = "3D animators from Utah"
+metadata/_custom_type_script = "uid://xomjvxu14xuc"
+
+[sub_resource type="Resource" id="Resource_akl5o"]
+script = ExtResource("3_o6xl0")
+scene = ExtResource("5_tipki")
+display_name = "Elephant"
+hint = "Long memory"
+metadata/_custom_type_script = "uid://xomjvxu14xuc"
+
+[sub_resource type="Resource" id="Resource_8bvjc"]
+script = ExtResource("3_o6xl0")
+scene = ExtResource("6_85g3d")
+display_name = "Globe"
+hint = "Pale blue dot"
+metadata/_custom_type_script = "uid://xomjvxu14xuc"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tbgi4"]
+specular_mode = 1
+albedo_texture = ExtResource("7_85g3d")
+uv1_scale = Vector3(2.54, 2.54, 2.54)
+uv1_offset = Vector3(-0.77, -0.775, 0)
+texture_repeat = false
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_6l45m"]
-size = Vector2(80, 50)
+material = SubResource("StandardMaterial3D_tbgi4")
+size = Vector2(150, 75)
 orientation = 2
 
 [sub_resource type="Environment" id="Environment_lb78n"]
+background_energy_multiplier = 0.7
+ambient_light_color = Color(0.0015234345, 0.15269786, 0.35670605, 1)
 volumetric_fog_density = 0.2459
 adjustment_brightness = 0.94
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_6l45m"]
 
+[sub_resource type="Theme" id="Theme_sivy4"]
+default_font = ExtResource("8_tipki")
+HeaderLarge/font_sizes/font_size = 45
+
 [node name="World" type="Node3D" unique_id=305426670]
 script = ExtResource("1_0wfyh")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=47160760]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 31.896)
-light_color = Color(0.9718326, 0.96505004, 0.9653515, 1)
-light_energy = 11.426
-light_size = 0.703
-light_specular = 6.045
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 30.167202)
+light_energy = 16.0
+light_size = 2.0
+light_specular = 0.428
 shadow_enabled = true
 shadow_bias = 5.674
 shadow_normal_bias = 3.376
 shadow_reverse_cull_face = true
+shadow_blur = 10.0
 distance_fade_enabled = true
-spot_range = 51.184006
+spot_range = 50.0
 spot_attenuation = 0.7
-spot_angle = 16.49
-spot_angle_attenuation = 0.6372818
+spot_angle = 20.41
+spot_angle_attenuation = 0.659756
+script = ExtResource("2_85g3d")
+flicker_strength = -0.715
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1922083486]
-transform = Transform3D(0.93726426, 0.045727316, -0.3456078, 0, 0.9913603, 0.13116674, 0.34861976, -0.1229379, 0.9291666, -10.749723, 3.9426517, 35.52978)
+transform = Transform3D(0.8816914, 0.065967426, -0.4671922, 0, 0.9901779, 0.13981289, 0.47182652, -0.12327182, 0.8730314, -15.147585, 5.0758753, 34.244724)
 current = true
 fov = 36.4
 
-[node name="TeaPot" type="MeshInstance3D" parent="." unique_id=1863372062]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7112427, 19.05544)
-gi_mode = 2
-mesh = ExtResource("1_o5qli")
-surface_material_override/0 = SubResource("StandardMaterial3D_0wfyh")
+[node name="ObjectSpawner" type="Node3D" parent="." unique_id=211412211]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19.055)
+script = ExtResource("2_o6xl0")
+object_defs = Array[ExtResource("3_o6xl0")]([SubResource("Resource_tbgi4"), SubResource("Resource_akl5o"), SubResource("Resource_8bvjc")])
+
+[node name="TeaPot" parent="ObjectSpawner" unique_id=1721863556 instance=ExtResource("4_tipki")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=161456090]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.6269798)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.044293404, 0, 0.020751953)
 mesh = SubResource("PlaneMesh_6l45m")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1107869868]
@@ -56,12 +98,34 @@ camera_attributes = SubResource("CameraAttributesPractical_6l45m")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=291418552]
 
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=1256488600]
-anchors_preset = 1
-anchor_left = 1.0
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=801409937]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 23.0
-grow_horizontal = 0
-theme_override_font_sizes/font_size = 45
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+theme = SubResource("Theme_sivy4")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=1256488600]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 284.0
+offset_top = -177.0
+offset_right = 411.0
+offset_bottom = -140.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"HeaderLarge"
 text = "JAJAJ"
+
+[node name="StatusLight" type="OmniLight3D" parent="." unique_id=2116127307]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.109348, 8.037403, 3.8707387)
+light_color = Color(0.5854582, 0.74107254, 0.7548075, 1)
+light_energy = 13.635
+omni_range = 19.383

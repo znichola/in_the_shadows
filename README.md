@@ -9,3 +9,4 @@ A project made for the 42 course.
 
 - [free asset source](https://ithappystudios.com/free/)
 - [free no email assets source](https://quaternius.com/)
+- [gemini used for image gen]https://gemini.google.com/

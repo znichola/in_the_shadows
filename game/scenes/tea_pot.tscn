@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bshfi4micmgb0"]
+
+[ext_resource type="ArrayMesh" uid="uid://0e2idom1k8fd" path="res://models/tea_pot.obj" id="1_gj3ke"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sivy4"]
+albedo_color = Color(0.60713136, 0.075511016, 0.1950813, 1)
+metallic = 0.45
+roughness = 0.5
+backlight_enabled = true
+backlight = Color(0.013046021, 0.11382163, 0.14757353, 1)
+
+[node name="TeaPot" type="Node3D" unique_id=1721863556]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=40343780]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9219634, 0)
+mesh = ExtResource("1_gj3ke")
+surface_material_override/0 = SubResource("StandardMaterial3D_sivy4")
