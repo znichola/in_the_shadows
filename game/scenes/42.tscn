@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://d0m7sex0ouvxy"]
+
+[ext_resource type="Script" uid="uid://xomjvxu14xuc" path="res://scripts/object_def.gd" id="1_1ar8s"]
+[ext_resource type="ArrayMesh" uid="uid://cqtxda67ovc28" path="res://models/logo-4.obj" id="1_w472t"]
+[ext_resource type="ArrayMesh" uid="uid://cs140g0e4o7hr" path="res://models/logo-2.obj" id="2_kni2r"]
+[ext_resource type="Material" uid="uid://br7lhchencr4e" path="res://materials/42_material.tres" id="3_bdu24"]
+
+[node name="Node3D" type="Node3D" unique_id=1885632637]
+script = ExtResource("1_1ar8s")
+display_name = "42"
+hint = "The answer to life"
+a_y_rot_allowed = false
+b_x_rot_allowed = false
+
+[node name="ObjA" type="Node3D" parent="." unique_id=1273508111]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ObjA" unique_id=567797539]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -1.805, 0, 0)
+mesh = ExtResource("1_w472t")
+surface_material_override/0 = ExtResource("3_bdu24")
+
+[node name="ObjB" type="Node3D" parent="." unique_id=1263830585]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ObjB" unique_id=679371465]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0.989, 0, 0)
+mesh = ExtResource("2_kni2r")
+surface_material_override/0 = ExtResource("3_bdu24")

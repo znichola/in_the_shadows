@@ -7,7 +7,7 @@
 colors = PackedColorArray(0.015686275, 0.003921569, 0.07450981, 1, 1, 1, 1, 0.47058824)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_wkn5y"]
-frequency = 0.1213
+frequency = 0.0379
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_gj3ke"]
 noise = SubResource("FastNoiseLite_wkn5y")
@@ -15,10 +15,14 @@ color_ramp = SubResource("Gradient_gmrpf")
 seamless = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sivy4"]
-albedo_color = Color(0.029856082, 0.3157924, 0.37681463, 1)
+albedo_color = Color(0.011445529, 0.17639181, 0.2138915, 1)
 albedo_texture = SubResource("NoiseTexture2D_gj3ke")
-metallic = 0.79
-roughness = 0.64
+metallic = 1.0
+metallic_specular = 0.33
+metallic_texture = SubResource("NoiseTexture2D_gj3ke")
+roughness = 0.92
+roughness_texture = SubResource("NoiseTexture2D_gj3ke")
+uv1_triplanar = true
 
 [node name="Node3D" type="Node3D" unique_id=1217104716]
 script = ExtResource("1_0p18s")

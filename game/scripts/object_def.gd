@@ -4,6 +4,9 @@ class_name ObjectDef
 @export var display_name: String
 @export var hint: String
 
+@export var max_x_misalignment_deg: float = 4.0 # left/right tolerance
+@export var max_y_misalignment_deg: float = 8.0 # up/down tolerance
+
 @export_group("Object A")
 @export var a_x_rot_allowed: bool = true
 @export var a_y_rot_allowed: bool = true
@@ -11,9 +14,6 @@ class_name ObjectDef
 @export_group("Object B")
 @export var b_x_rot_allowed: bool = true
 @export var b_y_rot_allowed: bool = true
-
-@export var max_x_misalignment_deg: float = 4.0 # left/right tolerance
-@export var max_y_misalignment_deg: float = 8.0 # up/down tolerance
 
 const facing_axis: Vector3 = Vector3.FORWARD
 

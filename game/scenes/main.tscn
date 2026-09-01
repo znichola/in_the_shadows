@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://ccofcfxedv8ee" path="res://scenes/elephant.tscn" id="5_tipki"]
 [ext_resource type="PackedScene" uid="uid://7ctx5y5jbpp1" path="res://scenes/globe.tscn" id="6_tipki"]
 [ext_resource type="Texture2D" uid="uid://cnpclft526m7i" path="res://images/background.png" id="7_85g3d"]
+[ext_resource type="PackedScene" uid="uid://d0m7sex0ouvxy" path="res://scenes/42.tscn" id="7_choun"]
+[ext_resource type="Script" uid="uid://dc808xfbernf3" path="res://scripts/ui_controller.gd" id="8_85g3d"]
 [ext_resource type="FontFile" uid="uid://dnnwmk46jnqd6" path="res://fonts/Old Cave.otf" id="8_tipki"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tbgi4"]
@@ -32,6 +34,9 @@ adjustment_brightness = 0.94
 [sub_resource type="Theme" id="Theme_sivy4"]
 default_font = ExtResource("8_tipki")
 HeaderLarge/font_sizes/font_size = 45
+RichTextLabel/colors/default_color = Color(0.08743141, 1.1280645e-09, 3.008172e-09, 1)
+RichTextLabel/colors/font_shadow_color = Color(0.13333334, 0.13333334, 0.13333334, 0.21568628)
+RichTextLabel/font_sizes/normal_font_size = 28
 
 [node name="World" type="Node3D" unique_id=305426670]
 script = ExtResource("1_0wfyh")
@@ -62,7 +67,7 @@ fov = 36.4
 [node name="ObjectSpawner" type="Node3D" parent="." unique_id=211412211]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19.055)
 script = ExtResource("2_o6xl0")
-object_scenes = Array[PackedScene]([ExtResource("5_tipki"), ExtResource("4_tipki"), ExtResource("6_tipki")])
+object_scenes = Array[PackedScene]([ExtResource("5_tipki"), ExtResource("4_tipki"), ExtResource("6_tipki"), ExtResource("7_choun")])
 
 [node name="TeaPot" parent="ObjectSpawner" unique_id=1721863556 instance=ExtResource("4_tipki")]
 
@@ -74,9 +79,10 @@ mesh = SubResource("PlaneMesh_6l45m")
 environment = SubResource("Environment_lb78n")
 camera_attributes = SubResource("CameraAttributesPractical_6l45m")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=291418552]
+[node name="UI" type="CanvasLayer" parent="." unique_id=291418552]
+script = ExtResource("8_85g3d")
 
-[node name="Control" type="Control" parent="CanvasLayer" unique_id=801409937]
+[node name="Control" type="Control" parent="UI" unique_id=801409937]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -85,8 +91,9 @@ grow_horizontal = 2
 grow_vertical = 2
 offset_transform_enabled = true
 theme = SubResource("Theme_sivy4")
+metadata/_edit_lock_ = true
 
-[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=1256488600]
+[node name="Signpost" type="Label" parent="UI/Control" unique_id=1256488600]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -102,7 +109,24 @@ grow_vertical = 2
 theme_type_variation = &"HeaderLarge"
 text = "JAJAJ"
 
-[node name="StatusLight" type="OmniLight3D" parent="." unique_id=2116127307]
+[node name="WallText" type="RichTextLabel" parent="UI/Control" unique_id=2130294157]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.163
+anchor_top = 0.23900001
+anchor_right = 0.656
+anchor_bottom = 0.71900004
+offset_left = 57.224
+offset_top = 54.12799
+offset_right = -57.712036
+offset_bottom = -27.912018
+grow_horizontal = 2
+grow_vertical = 2
+text = "Some longer story style text, indended to give an overvew of what's happening, explain the story beat, and what should happen next"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="StatusLight" type="OmniLight3D" parent="UI" unique_id=2116127307]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.109348, 8.037403, 3.8707387)
 light_color = Color(0.5854582, 0.74107254, 0.7548075, 1)
 light_energy = 13.635

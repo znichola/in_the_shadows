@@ -4,9 +4,10 @@
 [ext_resource type="Script" uid="uid://xomjvxu14xuc" path="res://scripts/object_def.gd" id="1_wkn5y"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sivy4"]
-albedo_color = Color(0.60713136, 0.075511016, 0.1950813, 1)
-metallic = 0.45
-roughness = 0.5
+albedo_color = Color(0.22096166, 0.010873964, 0.049388774, 1)
+metallic = 0.59
+metallic_specular = 0.56
+roughness = 0.35
 backlight_enabled = true
 backlight = Color(0.013046021, 0.11382163, 0.14757353, 1)
 
