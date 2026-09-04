@@ -10,12 +10,13 @@
 [ext_resource type="PackedScene" uid="uid://d0m7sex0ouvxy" path="res://scenes/42.tscn" id="7_choun"]
 [ext_resource type="Script" uid="uid://dc808xfbernf3" path="res://scripts/ui_controller.gd" id="8_85g3d"]
 [ext_resource type="FontFile" uid="uid://dnnwmk46jnqd6" path="res://fonts/Old Cave.otf" id="8_tipki"]
+[ext_resource type="PackedScene" uid="uid://c2dopwd0rnbxq" path="res://scenes/deer.tscn" id="8_ya4ey"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tbgi4"]
 specular_mode = 1
 albedo_texture = ExtResource("7_85g3d")
 uv1_scale = Vector3(2.54, 2.54, 2.54)
-uv1_offset = Vector3(-0.77, -0.775, 0)
+uv1_offset = Vector3(-0.82, -0.775, 0)
 texture_repeat = false
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_6l45m"]
@@ -34,6 +35,7 @@ adjustment_brightness = 0.94
 [sub_resource type="Theme" id="Theme_sivy4"]
 default_font = ExtResource("8_tipki")
 HeaderLarge/font_sizes/font_size = 45
+HeaderSmall/colors/font_color = Color(0.121972255, 0.178408, 0.18342462, 1)
 RichTextLabel/colors/default_color = Color(0.08743141, 1.1280645e-09, 3.008172e-09, 1)
 RichTextLabel/colors/font_shadow_color = Color(0.13333334, 0.13333334, 0.13333334, 0.21568628)
 RichTextLabel/font_sizes/normal_font_size = 28
@@ -67,12 +69,11 @@ fov = 36.4
 [node name="ObjectSpawner" type="Node3D" parent="." unique_id=211412211]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19.055)
 script = ExtResource("2_o6xl0")
-object_scenes = Array[PackedScene]([ExtResource("5_tipki"), ExtResource("4_tipki"), ExtResource("6_tipki"), ExtResource("7_choun")])
+object_scenes = Array[PackedScene]([ExtResource("5_tipki"), ExtResource("4_tipki"), ExtResource("6_tipki"), ExtResource("7_choun"), ExtResource("8_ya4ey")])
 
 [node name="TeaPot" parent="ObjectSpawner" unique_id=1721863556 instance=ExtResource("4_tipki")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=161456090]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.044293404, 0, 0.020751953)
 mesh = SubResource("PlaneMesh_6l45m")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1107869868]
@@ -95,19 +96,39 @@ metadata/_edit_lock_ = true
 
 [node name="Signpost" type="Label" parent="UI/Control" unique_id=1256488600]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 284.0
-offset_top = -177.0
-offset_right = 411.0
-offset_bottom = -140.0
+anchors_preset = -1
+anchor_left = 0.66
+anchor_top = 0.135
+anchor_right = 0.97
+anchor_bottom = 0.44500002
+offset_left = 26.679993
+offset_top = 32.519997
+offset_right = -24.440063
+offset_bottom = -51.360016
 grow_horizontal = 2
 grow_vertical = 2
 theme_type_variation = &"HeaderLarge"
-text = "JAJAJ"
+text = "JAJA something long"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HintText" type="Label" parent="UI/Control" unique_id=169200730]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.694
+anchor_top = 0.81200004
+anchor_right = 0.95000005
+anchor_bottom = 0.95900005
+offset_left = -81.48804
+offset_top = 28.823975
+offset_right = 15.599976
+offset_bottom = -8.432007
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"HeaderSmall"
+text = "Press space to skip forward"
+horizontal_alignment = 2
+autowrap_mode = 3
 
 [node name="WallText" type="RichTextLabel" parent="UI/Control" unique_id=2130294157]
 layout_mode = 1
@@ -119,11 +140,12 @@ anchor_bottom = 0.71900004
 offset_left = 57.224
 offset_top = 54.12799
 offset_right = -57.712036
-offset_bottom = -27.912018
+offset_bottom = -3.9120178
 grow_horizontal = 2
 grow_vertical = 2
 text = "Some longer story style text, indended to give an overvew of what's happening, explain the story beat, and what should happen next"
 fit_content = true
+scroll_active = false
 horizontal_alignment = 1
 
 [node name="StatusLight" type="OmniLight3D" parent="UI" unique_id=2116127307]

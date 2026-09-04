@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://0vg1dx2srcl4"]
+
+[ext_resource type="PackedScene" uid="uid://dtvmb2g22yf8x" path="res://models/deer.glb" id="1_1shfv"]
+[ext_resource type="Script" uid="uid://c3t2v4twqv4ql" path="res://scripts/deer_raw.gd" id="2_qakut"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qakut"]
+albedo_color = Color(0.08116732, 0.040322747, 0.019497668, 1)
+metallic = 0.85
+metallic_specular = 0.54
+roughness = 0.4
+
+[node name="DeerRaw" unique_id=348454695 instance=ExtResource("1_1shfv")]
+script = ExtResource("2_qakut")
+
+[node name="Skeleton3D" parent="Deer_001_rig" parent_id_path=PackedInt32Array(990313550) index="0" unique_id=1857270684]
+bones/0/rotation = Quaternion(-4.3711395e-08, 1, -1.1424389e-07, -8.742278e-08)
+bones/1/position = Vector3(-1.8900909e-06, 0.90510106, 0.266487)
+bones/1/rotation = Quaternion(-0.61743647, 1.1436488e-06, 3.573617e-06, 0.78662074)
+bones/2/rotation = Quaternion(0.78668535, 0.114456385, -0.04502349, -0.6049784)
+bones/3/position = Vector3(-3.9026418e-09, 0.2324899, 2.6915343e-08)
+bones/3/rotation = Quaternion(0.67138314, -7.532797e-08, 2.687966e-07, 0.74111044)
+bones/4/rotation = Quaternion(-0.9313822, -0.037860647, 0.06582864, 0.35603437)
+bones/5/rotation = Quaternion(0.6830641, 0.02943458, -0.017412705, 0.72955734)
+bones/6/rotation = Quaternion(-0.0966647, 0.11856761, 0.007070815, 0.98820424)
+bones/7/rotation = Quaternion(0.89346874, 0.0058921883, -0.0063020294, -0.44904268)
+bones/8/rotation = Quaternion(0.03633071, -0.008622603, -0.014902906, 0.9991915)
+bones/9/rotation = Quaternion(-0.25247484, 0.009340204, 0.0053122593, 0.9675438)
+bones/10/rotation = Quaternion(0.034726586, 9.733426e-12, 7.999364e-09, 0.99939686)
+bones/11/position = Vector3(-4.844458e-13, 0.19384535, -4.3789356e-08)
+bones/11/rotation = Quaternion(0.22094695, -9.440554e-07, -1.9392682e-07, 0.9752858)
+bones/12/position = Vector3(0.12234217, 0.14700957, -0.007825792)
+bones/12/rotation = Quaternion(-0.65417343, -0.01032184, -0.18163474, 0.73413855)
+bones/13/position = Vector3(5.451227e-09, 0.3082002, -6.686271e-08)
+bones/13/rotation = Quaternion(-0.7060109, -0.261413, -0.0043705446, 0.6581739)
+bones/14/rotation = Quaternion(0.6154127, 0.004445261, -0.0016761405, 0.7881907)
+bones/15/rotation = Quaternion(-0.5074651, -0.004662331, 0.07111846, 0.85871977)
+bones/16/rotation = Quaternion(0.013020613, 0.02766316, 0.04458031, 0.9985379)
+bones/17/rotation = Quaternion(0.24585953, -9.258394e-07, 3.7005563e-07, 0.9693055)
+bones/18/rotation = Quaternion(0.2944211, -1.6431761e-06, 8.458553e-07, 0.95567584)
+bones/19/rotation = Quaternion(-0.2497759, -2.870003e-07, 5.0983095e-07, 0.96830374)
+bones/20/rotation = Quaternion(-0.47519863, -1.082888e-07, -2.4081697e-07, 0.8798785)
+bones/21/rotation = Quaternion(0.8078929, 0.13903691, -0.3931581, 0.41641858)
+bones/22/rotation = Quaternion(0.8012981, -0.49958748, -0.012719678, 0.32889506)
+bones/23/position = Vector3(-0.12234221, 0.14975178, 0.0067285486)
+bones/23/rotation = Quaternion(-0.8939638, 0.09279276, -0.07954487, 0.4311506)
+bones/24/position = Vector3(4.3946017e-08, 0.3082003, -3.690684e-08)
+bones/24/rotation = Quaternion(-0.6128527, -1.0612856e-07, 2.5879197e-07, 0.7901972)
+bones/25/rotation = Quaternion(0.91283697, -0.052471437, 0.023193281, 0.4042739)
+bones/26/rotation = Quaternion(-0.60398036, 0.108792976, -0.18523909, 0.7675014)
+bones/27/rotation = Quaternion(0.019626997, -0.07572806, -0.1106987, 0.99077034)
+bones/28/rotation = Quaternion(0.78699416, -0.087955974, 0.014863813, -0.6104777)
+bones/29/position = Vector3(2.022702e-08, 0.23248999, 8.565136e-08)
+bones/29/rotation = Quaternion(0.62586266, 0.012229699, 0.011141517, 0.77975786)
+bones/30/rotation = Quaternion(-0.9198113, 0.03319617, -0.07453497, 0.38378343)
+bones/31/rotation = Quaternion(0.6170118, -0.018527457, 0.0011895972, 0.7867349)
+bones/32/rotation = Quaternion(0.082704455, -0.06860779, 0.014335715, 0.9941064)
+
+[node name="Deer_001" parent="Deer_001_rig/Skeleton3D" index="0" unique_id=575155511]
+blend_shapes/MeshDeform = 1.0
+surface_material_override/0 = SubResource("StandardMaterial3D_qakut")
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=1587245394]
+deterministic = true
+speed_scale = 0.8

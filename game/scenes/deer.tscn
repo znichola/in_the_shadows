@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c2dopwd0rnbxq"]
+
+[ext_resource type="Script" uid="uid://xomjvxu14xuc" path="res://scripts/object_def.gd" id="1_u3xnd"]
+[ext_resource type="PackedScene" uid="uid://0vg1dx2srcl4" path="res://scenes/deer_raw.tscn" id="2_7c7n6"]
+
+[node name="Node3D" type="Node3D" unique_id=797601801]
+script = ExtResource("1_u3xnd")
+
+[node name="ObjA" type="Node3D" parent="." unique_id=381145752]
+
+[node name="DeerRaw" parent="ObjA" unique_id=348454695 instance=ExtResource("2_7c7n6")]
+transform = Transform3D(-1.0162898e-07, 0, -2.325, 0, 2.325, 0, 2.325, 0, -1.0162898e-07, 0.5416527, -2.2265303, 0)
