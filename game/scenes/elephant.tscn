@@ -25,6 +25,7 @@ roughness_texture = SubResource("NoiseTexture2D_gj3ke")
 uv1_triplanar = true
 
 [node name="Node3D" type="Node3D" unique_id=1217104716]
+transform = Transform3D(0.656059, 0, 0.75470954, 0, 1, 0, -0.75470954, 0, 0.656059, 0, 0, 0)
 script = ExtResource("1_0p18s")
 a_x_rot_allowed = false
 

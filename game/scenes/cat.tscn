@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dyqo4y5sbe8bp"]
+
+[ext_resource type="ArrayMesh" uid="uid://dbiqo4il8ta6e" path="res://models/cat.obj" id="1_myi5k"]
+[ext_resource type="Script" uid="uid://xomjvxu14xuc" path="res://scripts/object_def.gd" id="1_se5fe"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k8t6b"]
+albedo_color = Color(0.07750844, 0.08654299, 0.09037755, 1)
+roughness = 0.94
+
+[node name="Cat" type="Node3D" unique_id=2070878804]
+script = ExtResource("1_se5fe")
+
+[node name="ObjA" type="Node3D" parent="." unique_id=933886611]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ObjA" unique_id=1426513729]
+transform = Transform3D(-3.7635505e-07, 0, -8.61, 0, 8.61, 0, 8.61, 0, -3.7635505e-07, -0.061273456, -1.0770152, 0)
+mesh = ExtResource("1_myi5k")
+surface_material_override/0 = SubResource("StandardMaterial3D_k8t6b")

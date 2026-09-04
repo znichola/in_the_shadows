@@ -10,10 +10,14 @@ class_name ObjectDef
 @export_group("Object A")
 @export var a_x_rot_allowed: bool = true
 @export var a_y_rot_allowed: bool = true
+@export var a_puzzel_rot_x: float = 0 # left/right tolerance
+@export var a_puzzel_rot_y: float = 49.0 # up/down tolerance
 
 @export_group("Object B")
 @export var b_x_rot_allowed: bool = true
 @export var b_y_rot_allowed: bool = true
+@export var b_puzzel_rot_x: float = 0 # left/right tolerance
+@export var b_puzzel_rot_y: float = 0 # up/down tolerance
 
 const facing_axis: Vector3 = Vector3.FORWARD
 
@@ -28,8 +32,12 @@ func _ready() -> void:
 	b = get_node_or_null("ObjB") as Node3D
 	if a:
 		aInit = a.transform
+		a.rotate_x(deg_to_rad(a_puzzel_rot_x))
+		a.rotate_y(deg_to_rad(a_puzzel_rot_y))
 	if b:
 		bInit = b.transform
+		b.rotate_x(deg_to_rad(b_puzzel_rot_x))
+		b.rotate_y(deg_to_rad(b_puzzel_rot_y))
 
 
 func on_spawn() -> void:

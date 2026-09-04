@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://xomjvxu14xuc" path="res://scripts/object_def.gd" id="1_u3xnd"]
 [ext_resource type="PackedScene" uid="uid://0vg1dx2srcl4" path="res://scenes/deer_raw.tscn" id="2_7c7n6"]
 
-[node name="Node3D" type="Node3D" unique_id=797601801]
+[node name="Deer" type="Node3D" unique_id=797601801]
 script = ExtResource("1_u3xnd")
 
 [node name="ObjA" type="Node3D" parent="." unique_id=381145752]
